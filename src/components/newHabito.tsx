@@ -84,36 +84,36 @@ export function NewHabitoCard({ onHabitoCreated }: NewHabitoProps) {
 
     return (
         <Dialog.Root>
-            <Dialog.Trigger className='rounded-md bg-emerald-700 text-left p-5 gap-3 outline-none flex flex-col hover:ring-2 hover:ring-emerald-600 focus-visible:ring-2 focus-visible:ring-lime-400'>
-                <span className='text-sm font-medium text-emerald-200'>
+            <Dialog.Trigger className='rounded-md bg-violet-700 text-left p-5 gap-3 outline-none flex flex-col hover:ring-2 hover:ring-violet-300 focus-visible:ring-2 focus-visible:ring-violet-300'>
+                <span className='text-sm font-bold text-yellow-400'>
                     Adicionar nota
                 </span>
-                <p className='text-sm leading-6 text-emerald-400'>
+                <p className='text-sm leading-6 text-violet-200'>
                     Grave uma nota em áudio que será convertida para texto automaticamente.
                 </p>
             </Dialog.Trigger>
 
             <Dialog.Portal>
                 <Dialog.Overlay className='inset-0 fixed bg-black/50'>
-                    <Dialog.Content className='fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-emerald-700 md:rounded-md flex flex-col outline-none'>
-                        <Dialog.Close className='absolute right-0 top-0 bg-emerald-800 p-1.5 text-emerald-400 rounded-bl-md'>
-                            <X className='size-5 hover:text-emerald-100'/>
+                    <Dialog.Content className='fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-violet-900 md:rounded-md flex flex-col outline-none'>
+                        <Dialog.Close className='absolute right-0 top-0 bg-violet-950 p-1.5 text-violet-300 rounded-bl-md'>
+                            <X className='size-5 hover:text-violet-100'/>
                         </Dialog.Close>
                         <form className='flex-1 flex flex-col'>
                             <div className='flex flex-1 flex-col gap-3 p-5'>
-                                <span className='text-sm font-medium text-emerald-300'>
+                                <span className='text-sm font-medium text-violet-400'>
                                     Adicionar uma nota
                                 </span>
 
                                 {shouldShowOnboarding ? (
-                                    <p className='text-sm leading-6 text-emerald-400'>
-                                        Comece <button type='button' onClick={handleStartRecording} className='font-medium text-lime-400 hover:text-lime-500 hover:underline'>gravando uma nota</button> em áudio ou se preferir <button type='button' onClick={handleStartEditor} className='font-medium text-lime-400 hover:text-lime-500 hover:underline'>utilize apenas texto</button>
+                                    <p className='text-sm leading-6 text-violet-200'>
+                                        Comece <button type='button' onClick={handleStartRecording} className='font-medium text-yellow-400 hover:text-yellow-300 hover:underline'>gravando uma nota</button> em áudio ou se preferir <button type='button' onClick={handleStartEditor} className='font-medium text-yellow-400 hover:text-yellow-300 hover:underline'>utilize apenas texto</button>
                                     </p>
 
                                 ) : (
                                     <textarea
                                         autoFocus
-                                        className='text-sm leading-6 text-emerald-400 bg-transparent resize-none flex-1 outline-none'
+                                        className='text-sm leading-6 text-violet-400 bg-transparent resize-none flex-1 outline-none'
                                         onChange={handleContentChanged}
                                         value={content}
                                     />
@@ -127,7 +127,7 @@ export function NewHabitoCard({ onHabitoCreated }: NewHabitoProps) {
                                 </button>
 
                             ) : (
-                                <button type='button' onClick={handleSaveNote} className='w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium group hover:bg-lime-500'>
+                                <button type='button' onClick={handleSaveNote} className='w-full bg-violet-300 py-4 text-center text-sm text-violet-950 outline-none font-medium group hover:bg-violet-400'>
                                     Salvar nota
                                 </button>
                             )}
