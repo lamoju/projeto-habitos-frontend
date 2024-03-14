@@ -1,8 +1,7 @@
 import { ChangeEvent, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
 import { NewHabitoCard } from './components/newHabito'
+import { Habito } from './components/habito'
 
 interface Habito {
   id: string
@@ -57,7 +56,7 @@ export function App() {
 
   return (
     <div className='mx-auto max-w-6xl my-12 space-y-6 px-5'>
-      <h1 className='text-violet-900 text-4xl '>Registro de Hábitos</h1>
+      <h1 className='text-violet-900 text-4xl text-center'>Registro de Hábitos</h1>
       <form className='w-full'>
         <input 
           type="text" 
@@ -71,9 +70,9 @@ export function App() {
       <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]'>
         <NewHabitoCard onHabitoCreated={onHabitoCreated} />
         
-        {/* {filteredHabitos.map(habito => {
-          return <NoteCard key={habito.id} habito={habito} onHabitoDeleted={onHabitoDeleted} />
-        })} */}
+        {filteredHabitos.map(habito => {
+          return <Habito key={habito.id} habito={habito} HabitoDeleted={onHabitoDeleted} />
+        })} 
       </div>
     </div>
   )
